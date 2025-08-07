@@ -240,10 +240,66 @@
         </div>
     </footer>
 
-    <!-- Chatbot Widget -->
-    <div id="dify-chatbot-bubble-button"></div>
-    <div id="dify-chatbot-bubble-window">
-        <div id="dify-chatbot-bubble-iframe"></div>
+    <!-- Manual Chatbot Widget -->
+    <div id="manual-chatbot" style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 999999;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #1C64F2, #0052CC);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(28, 100, 242, 0.4);
+        transition: all 0.3s ease;
+    " onclick="openChatWindow()">
+        <i class="fas fa-comments" style="color: white; font-size: 24px;"></i>
+    </div>
+    
+    <!-- Chat Window -->
+    <div id="chat-window" style="
+        display: none;
+        position: fixed;
+        bottom: 90px;
+        right: 20px;
+        width: 350px;
+        height: 500px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        border: 2px solid rgba(255, 215, 0, 0.3);
+        z-index: 999998;
+        overflow: hidden;
+    ">
+        <div style="
+            background: linear-gradient(135deg, #1C64F2, #0052CC);
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        ">
+            <h4 style="margin: 0; font-size: 16px;">Kèo Sư MelBet</h4>
+            <button onclick="closeChatWindow()" style="
+                background: none;
+                border: none;
+                color: white;
+                font-size: 20px;
+                cursor: pointer;
+            ">&times;</button>
+        </div>
+        <iframe 
+            src="https://udify.app/chatbot/xhJuB06Ye6hfb3s5"
+            style="
+                width: 100%;
+                height: calc(100% - 60px);
+                border: none;
+            "
+        ></iframe>
     </div>
 
     <!-- Bootstrap JS -->
@@ -251,17 +307,61 @@
     <!-- Dify Chatbot Integration -->
     <script>
         window.difyChatbotConfig = {
-            token: 'xhJuB06Ye6hfb3s5',
-            systemVariables: {},
-            userVariables: {}
+            token: 'xhJuB06Ye6hfb3s5'
         }
     </script>
     <script 
         src="https://udify.app/embed.min.js" 
-        id="dify-chatbot-bubble-button"
-        data-bot-token="xhJuB06Ye6hfb3s5"
+        id="xhJuB06Ye6hfb3s5"
         defer>
     </script>
+    
+    <style>
+        #dify-chatbot-bubble-button {
+            background-color: #1C64F2 !important;
+        }
+        #dify-chatbot-bubble-window {
+            width: 24rem !important;
+            height: 40rem !important;
+        }
+        
+        @media (max-width: 768px) {
+            #chat-window {
+                width: 90vw !important;
+                height: 70vh !important;
+                right: 5vw !important;
+                bottom: 80px !important;
+            }
+            #manual-chatbot {
+                bottom: 15px !important;
+                right: 15px !important;
+            }
+        }
+    </style>
+    
+    <script>
+        function openChatWindow() {
+            document.getElementById('chat-window').style.display = 'block';
+            document.getElementById('manual-chatbot').style.opacity = '0.7';
+        }
+        
+        function closeChatWindow() {
+            document.getElementById('chat-window').style.display = 'none';
+            document.getElementById('manual-chatbot').style.opacity = '1';
+        }
+        
+        // Close chat when clicking outside
+        document.addEventListener('click', function(e) {
+            const chatWindow = document.getElementById('chat-window');
+            const chatButton = document.getElementById('manual-chatbot');
+            if (!chatWindow.contains(e.target) && !chatButton.contains(e.target)) {
+                if (chatWindow.style.display === 'block') {
+                    closeChatWindow();
+                }
+            }
+        });
+    </script>
+    
     <!-- Custom JS -->
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
