@@ -109,6 +109,8 @@ body {
     height: auto;
     filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.3));
     animation: float 6s ease-in-out infinite;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 215, 0, 0.3);
 }
 
 @keyframes float {
@@ -308,8 +310,9 @@ body {
 }
 
 .footer-logo {
-    max-width: 150px;
+    max-width: 200px;
     height: auto;
+    filter: brightness(1.1);
 }
 
 .contact-item {
@@ -366,6 +369,38 @@ body {
     bottom: 20px !important;
     right: 20px !important;
     z-index: 999999 !important;
+    background-color: #1C64F2 !important;
+    border-radius: 50% !important;
+    box-shadow: 0 4px 20px rgba(28, 100, 242, 0.4) !important;
+    transition: all 0.3s ease !important;
+}
+
+#dify-chatbot-bubble-button:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 30px rgba(28, 100, 242, 0.6) !important;
+}
+
+#dify-chatbot-bubble-window {
+    width: 24rem !important;
+    height: 40rem !important;
+    border-radius: 15px !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid rgba(255, 215, 0, 0.2) !important;
+}
+
+@media (max-width: 768px) {
+    #dify-chatbot-bubble-window {
+        width: 90vw !important;
+        height: 70vh !important;
+        max-width: 350px !important;
+    }
+    
+    #dify-chatbot-bubble-button {
+        bottom: 15px !important;
+        right: 15px !important;
+        width: 60px !important;
+        height: 60px !important;
+    }
 }
 
 /* Responsive Design */

@@ -47,7 +47,7 @@
                 </div>
                 <div class="col-lg-6 col-md-12 text-center">
                     <div class="hero-avatar">
-                        <img src="{{ url_for('static', filename='images/avatar.svg') }}" alt="Kèo Sư MelBet" class="img-fluid avatar-img">
+                        <img src="{{ url_for('static', filename='images/keo-su-avatar.png') }}" alt="Kèo Sư MelBet" class="img-fluid avatar-img">
                     </div>
                 </div>
             </div>
@@ -189,7 +189,7 @@
             <div class="row">
                 <div class="col-lg-4 mb-4">
                     <div class="footer-brand">
-                        <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="MelBet Logo" class="footer-logo mb-3">
+                        <img src="{{ url_for('static', filename='images/melbet-logo.png') }}" alt="MelBet Logo" class="footer-logo mb-3">
                         <p>Kèo Sư MelBet - Đối tác uy tín hàng đầu trong lĩnh vực cược thể thao và casino online.</p>
                     </div>
                 </div>
@@ -249,13 +249,21 @@
     <!-- Dify Chatbot -->
     <script>
         window.difyChatbotConfig = {
-            token: 'app-mlJjqj3XqUGOPyJhLTJqkkgF'
+            token: 'xhJuB06Ye6hfb3s5',
+            systemVariables: {
+                // user_id: 'YOU CAN DEFINE USER ID HERE',
+                // conversation_id: 'YOU CAN DEFINE CONVERSATION ID HERE, IT MUST BE A VALID UUID',
+            },
+            userVariables: {
+                // avatar_url: 'YOU CAN DEFINE USER AVATAR URL HERE',
+                // name: 'YOU CAN DEFINE USER NAME HERE',
+            },
         }
     </script>
     <script
         src="https://udify.app/embed.min.js"
-        id="dify-chatbot-bubble-button"
-        data-bot-token="app-mlJjqj3XqUGOPyJhLTJqkkgF">
+        id="xhJuB06Ye6hfb3s5"
+        defer>
     </script>
     <!-- Custom JS -->
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>

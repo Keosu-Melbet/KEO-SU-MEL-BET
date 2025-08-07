@@ -139,12 +139,12 @@ function openForm(language) {
 function setupChatbot() {
     // Ensure chatbot is loaded
     if (typeof window.difyChatbotConfig !== 'undefined') {
-        console.log('Dify Chatbot initialized');
+        console.log('Dify Chatbot initialized with token: xhJuB06Ye6hfb3s5');
     }
     
     // Add chatbot open event tracking
     setTimeout(() => {
-        const chatButton = document.getElementById('dify-chatbot-bubble-button');
+        const chatButton = document.getElementById('xhJuB06Ye6hfb3s5');
         if (chatButton) {
             chatButton.addEventListener('click', function() {
                 trackEvent('chatbot_open');
@@ -161,7 +161,7 @@ function openChat(message) {
     // Try to open chatbot with message
     try {
         // Click the chatbot button first
-        const chatButton = document.querySelector('#dify-chatbot-bubble-button');
+        const chatButton = document.querySelector('#xhJuB06Ye6hfb3s5');
         if (chatButton) {
             chatButton.click();
             
