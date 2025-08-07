@@ -363,8 +363,8 @@ body {
     margin: 2rem 0;
 }
 
-/* Chatbot Styles - Simple and Functional */
-#xhJuB06Ye6hfb3s5 {
+/* Chatbot Styles for Dify */
+#dify-chatbot-bubble-button {
     position: fixed !important;
     bottom: 20px !important;
     right: 20px !important;
@@ -382,12 +382,21 @@ body {
     justify-content: center !important;
 }
 
-#xhJuB06Ye6hfb3s5:hover {
+#dify-chatbot-bubble-button:hover {
     transform: scale(1.1) !important;
     box-shadow: 0 6px 25px rgba(28, 100, 242, 0.6) !important;
 }
 
-/* Chatbot bubble for Dify */
+#dify-chatbot-bubble-window {
+    width: 24rem !important;
+    height: 40rem !important;
+    border-radius: 15px !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+    border: 2px solid rgba(255, 215, 0, 0.2) !important;
+    z-index: 999998 !important;
+}
+
+/* Alternative selector for Dify elements */
 div[id*="dify"] {
     z-index: 999998 !important;
 }
