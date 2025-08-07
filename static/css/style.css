@@ -103,12 +103,13 @@ body {
 }
 
 .avatar-img {
-    max-width: 500px;
+    max-width: 400px;
     height: auto;
     filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.3));
     animation: float 6s ease-in-out infinite;
     border-radius: 20px;
     border: 2px solid rgba(255, 215, 0, 0.3);
+    margin-top: 2rem;
 }
 
 @keyframes float {
@@ -235,7 +236,8 @@ body {
 }
 
 .wheel-img {
-    max-width: 400px;
+    width: 100%;
+    max-width: 350px;
     height: auto;
     filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.2));
     animation: rotate 10s linear infinite;
@@ -457,6 +459,15 @@ iframe[src*="udify"] {
     
     .registration-card {
         padding: 2rem;
+    }
+    
+    .avatar-img {
+        max-width: 350px;
+        margin-top: 3rem;
+    }
+    
+    .wheel-img {
+        max-width: 300px;
     }
 }
 

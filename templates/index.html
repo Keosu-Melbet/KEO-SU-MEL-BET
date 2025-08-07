@@ -247,13 +247,50 @@
     <!-- Dify Chatbot Script -->
     <script>
         window.difyChatbotConfig = {
-            token: 'xhJuB06Ye6hfb3s5'
+            token: 'xhJuB06Ye6hfb3s5',
+            baseUrl: 'https://udify.app'
         }
     </script>
     <script 
         src="https://udify.app/embed.min.js" 
-        id="xhJuB06Ye6hfb3s5" 
-        defer>
+        id="xhJuB06Ye6hfb3s5">
+    </script>
+    
+    <!-- Fallback Chatbot Button -->
+    <div id="chatbot-fallback" style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 999999;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #1C64F2, #0052CC);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(28, 100, 242, 0.4);
+        transition: all 0.3s ease;
+    " onclick="openChatbotFallback()">
+        <i class="fas fa-comments" style="color: white; font-size: 24px;"></i>
+    </div>
+    
+    <script>
+        function openChatbotFallback() {
+            // Try to trigger Dify chatbot or show message
+            console.log('Chatbot clicked');
+            alert('Chatbot Kèo Sư MelBet sẽ được kích hoạt. Hãy hỏi về: "Cách rút tiền MelBet?", "Cách làm đối tác?", "Soi kèo hôm nay?"');
+        }
+        
+        // Hide fallback if Dify loads successfully
+        setTimeout(() => {
+            const difyButton = document.getElementById('xhJuB06Ye6hfb3s5');
+            const fallbackButton = document.getElementById('chatbot-fallback');
+            if (difyButton && difyButton.style.display !== 'none') {
+                fallbackButton.style.display = 'none';
+            }
+        }, 3000);
     </script>
     <!-- Custom JS -->
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
