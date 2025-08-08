@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta name="google-site-verification" content="xecqQ7S4ogO1aZDGlYiYAlHf3QiaGtY75fpxl-AdZTY" />
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MDXPT3DS');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Melbet Việt Nam{% endblock %}</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="{% block description %}Trang cá cược thể thao uy tín, cập nhật kèo bóng đá mỗi ngày.{% endblock %}">
+  <meta name="keywords" content="cá cược, bóng đá, kèo nhà cái, melbet, soi kèo, tỷ lệ cược">
+  <meta name="author" content="Melbet Việt Nam">
+  <meta name="robots" content="index, follow">
+
+  <!-- Theme Color (mobile) -->
+  <meta name="theme-color" content="#ffc107">
+
+  <!-- Open Graph (Facebook, Zalo, etc.) -->
+  <meta property="og:title" content="{% block og_title %}Melbet Việt Nam{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}Trang cá cược thể thao uy tín, cập nhật kèo bóng đá mỗi ngày.{% endblock %}">
+  <meta property="og:image" content="{{ url_for('static', filename='og-image.jpg') }}">
+  <meta property="og:url" content="{{ request.url }}">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon-16x16.png') }}">
+  <link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Melbet Việt Nam</h1>
+    <nav>
+      <a href="{{ url_for('index') }}">Trang chủ</a>
+      <a href="{{ url_for('faq') }}">FAQ</a>
+      <a href="{{ url_for('contact') }}">Liên hệ</a>
+      <a href="{{ url_for('search') }}">Tìm kiếm</a>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}
+    <!-- Nội dung từng trang sẽ hiển thị ở đây -->
+    {% endblock %}
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Melbet Việt Nam. All rights reserved.</p>
+  </footer>
+</body>
+</html>

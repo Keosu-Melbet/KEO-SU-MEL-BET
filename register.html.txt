@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng ký thông tin khách hàng</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ff6600, #ff9900);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .form-container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 480px;
+      text-align: center;
+    }
+    .form-container img {
+      width: 80px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      color: #ff6600;
+      margin-bottom: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #e65c00;
+    }
+    #successMessage {
+      color: green;
+      margin-top: 15px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <img src="logo.png" alt="Logo">
+    <h2>Đăng ký thông tin khách hàng</h2>
+    <form id="customerForm">
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="text" name="phone" placeholder="Số điện thoại" required>
+      <input type="text" name="zalo" placeholder="Zalo (số hoặc link)">
+      <input type="text" name="telegram" placeholder="Telegram (username hoặc link)">
+      <input type="text" name="game_id" placeholder="ID Game" required>
+      <input type="text" name="referrer" placeholder="Người giới thiệu">
+      <button type="submit">Gửi thông tin</button>
+    </form>
+    <p id="successMessage">✅ Đăng ký thành công! Cảm ơn bạn.</p>
+  </div>
+
+  <script>
+    document.getElementById("customerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      fetch("https://script.google.com/macros/s/AKfycbxjR_vERAfTW9YsshhQJQ6Qb_f4F9ORWdEkdI7HdZO7RP1aAiShLkL-zlRfeTc7YspLuA/exec", {
+        method: "POST",
+        body: data
+      })
+      .then(() => {
+        document.getElementById("successMessage").style.display = "block";
+        form.reset();
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 3000);
+      })
+      .catch(() => {
+        alert("Có lỗi xảy ra. Vui lòng thử lại.");
+      });
+    });
+  </script>
+</body>
+</html>
