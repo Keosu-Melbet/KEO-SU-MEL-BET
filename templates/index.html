@@ -1,76 +1,368 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>MelBet Global Affiliates - Đối tác cá cược uy tín</title>
-  <meta name="description" content="Trở thành đối tác MelBet và kiếm tiền từ cá cược thể thao. Chatbot hỗ trợ 24/7.">
-  <meta name="keywords" content="MelBet, cá cược, affiliate, soi kèo, đối tác, chatbot, casino online">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="MelBet Global Affiliates">
-  <meta property="og:description" content="Trở thành đối tác MelBet và kiếm tiền từ cá cược thể thao.">
-  <meta property="og:image" content="{{ url_for('static', filename='images/melbet-logo.png') }}">
-  <meta property="og:url" content="https://melbetglobalaffiliates.dcms.site">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhận Thưởng Cùng KÈO SƯ MELBET - Soi Kèo Bóng Đá Chuyên Nghiệp</title>
+    <meta name="description" content="Nhận thưởng khủng cùng Kèo Sư MelBet! Soi kèo bóng đá chính xác, hướng dẫn rút tiền, làm đối tác MelBet. Chatbot 24/7 hỗ trợ cược thủ Việt Nam.">
+    <meta name="keywords" content="MelBet, soi kèo bóng đá, rút tiền MelBet, đối tác MelBet, cược thể thao, kèo sư">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Nhận Thưởng Cùng KÈO SƯ MELBET">
+    <meta property="og:description" content="Soi kèo bóng đá chuyên nghiệp, nhận thưởng khủng, chatbot 24/7 hỗ trợ">
+    <meta property="og:type" content="website">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "MelBet Global Affiliates",
-    "url": "https://melbetglobalaffiliates.dcms.site",
-    "logo": "https://melbetglobalaffiliates.dcms.site/static/images/melbet-logo.png",
-    "sameAs": [
-      "https://www.facebook.com/globalmelbet/",
-      "https://www.instagram.com/melbetglobalaffiliates.6879/"
-    ]
-  }
-  </script>
-
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <!-- Header Section -->
+    <header class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6 col-md-12 text-center text-lg-start">
+                    <div class="hero-content">
+                        <h1 class="golden-title mb-4">NHẬN THƯỞNG CÙNG<br><span class="highlight">KÈO SƯ MELBET</span></h1>
+                        <p class="hero-subtitle mb-4">Chuyên gia soi kèo bóng đá hàng đầu Việt Nam</p>
+                        <div class="hero-features">
+                            <div class="feature-item">
+                                <i class="fas fa-trophy text-warning me-2"></i>
+                                <span>Tỷ lệ thắng 95%</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-clock text-warning me-2"></i>
+                                <span>Hỗ trợ 24/7</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-shield-alt text-warning me-2"></i>
+                                <span>Uy tín hàng đầu</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 text-center">
+                    <div class="hero-avatar">
+                        <img src="{{ url_for('static', filename='images/keo-su-avatar.png') }}" alt="Kèo Sư MelBet" class="img-fluid avatar-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </header>
 
-  <!-- Chat Guide Section -->
-  <section class="chat-guide">
-    <h2>📌 Hướng dẫn nhanh</h2>
-    <button onclick="openChat('Cách làm đối tác MelBet?')">🤝 Làm đối tác MelBet</button>
-    <button onclick="openChat('Soi kèo bóng đá hôm nay?')">⚽ Soi kèo hôm nay</button>
-    <button onclick="openChat('Khuyến mãi MelBet mới nhất?')">🎁 Khuyến mãi mới</button>
-    <button onclick="openChat('Hướng dẫn nạp tiền MelBet?')">💳 Nạp tiền MelBet</button>
-  </section>
+    <!-- Registration Form Section -->
+    <section class="registration-section py-5" id="register">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="registration-card">
+                        <h2 class="section-title text-center mb-4">ĐĂNG KÝ NHẬN THƯỞNG NGAY</h2>
+                        <p class="text-center mb-4">Điền thông tin để trở thành đại sứ thân thiện và chiến hữu MelBet</p>
+                        
+                        <form class="registration-form" id="registrationForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">Số điện thoại *</label>
+                                    <input type="tel" class="form-control" id="phone" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email *</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="referralCode" class="form-label">Mã giới thiệu</label>
+                                <input type="text" class="form-control" id="referralCode" value="ml_1498999" readonly>
+                            </div>
+                            <div class="text-center">
+                                <button type="button" class="btn btn-warning btn-lg me-3" onclick="openForm('vn')">
+                                    <i class="fas fa-flag me-2"></i>Đăng ký (Tiếng Việt)
+                                </button>
+                                <button type="button" class="btn btn-outline-warning btn-lg" onclick="openForm('en')">
+                                    <i class="fas fa-globe me-2"></i>Register (English)
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Contact Form -->
-  <section class="contact-form">
-    <h2>📬 Liên hệ với chúng tôi</h2>
-    <form action="/submit" method="POST">
-      <input type="text" name="name" placeholder="Tên của bạn" required>
-      <input type="email" name="email" placeholder="Email liên hệ" required>
-      <textarea name="message" placeholder="Nội dung cần hỗ trợ" required></textarea>
-      <button type="submit">Gửi yêu cầu</button>
-    </form>
-  </section>
+    <!-- Lucky Wheel Section -->
+    <section class="wheel-section py-5" id="wheel">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="wheel-content">
+                        <h2 class="section-title mb-4">VÒNG QUAY MAY MẮN</h2>
+                        <h3 class="wheel-slogan mb-4">"Quay là trúng – chơi là thắng"</h3>
+                        <div class="wheel-benefits">
+                            <div class="benefit-item">
+                                <i class="fas fa-gift text-warning me-3"></i>
+                                <span>Thưởng lên đến 10,000,000 VNĐ</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-users text-warning me-3"></i>
+                                <span>Dành cho đại sứ thân thiện</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-handshake text-warning me-3"></i>
+                                <span>Ưu đãi cho chiến hữu MelBet</span>
+                            </div>
+                        </div>
+                        <p class="wheel-description mt-4">
+                            <strong>Điều kiện nhận thưởng:</strong> Trở thành đại sứ thân thiện và chiến hữu MelBet để có cơ hội quay thưởng hàng ngày!
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="wheel-container">
+                        <img src="{{ url_for('static', filename='images/wheel.svg') }}" alt="Vòng quay may mắn MelBet" class="img-fluid wheel-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Chat Button -->
-  <button id="chat-button" onclick="openChatWindow()">💬</button>
+    <!-- Chatbot Guide Section -->
+    <section class="chatbot-guide py-5" id="chatbot-guide">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title text-center mb-5">KÈO SƯ MELBET - CHATBOT THÔNG MINH 24/7</h2>
+                    <p class="text-center mb-5">
+                        <strong>Chatbot Kèo Sư MelBet</strong> có khả năng giải quyết tất cả mọi thắc mắc của anh em cược thủ. 
+                        Hỗ trợ 24/7, phản hồi nhanh chóng và chính xác!
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="chat-guide-card">
+                        <div class="guide-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h4>Cách rút tiền MelBet?</h4>
+                        <p>Hướng dẫn chi tiết các phương thức rút tiền nhanh chóng và an toàn</p>
+                        <button class="btn btn-sm btn-outline-warning" onclick="openChat('Cách rút tiền MelBet?')">
+                            Hỏi ngay
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="chat-guide-card">
+                        <div class="guide-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4>Cách làm đối tác?</h4>
+                        <p>Tham gia chương trình đối tác MelBet, kiếm tiền từ giới thiệu</p>
+                        <button class="btn btn-sm btn-outline-warning" onclick="openChat('Cách làm đối tác MelBet?')">
+                            Hỏi ngay
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="chat-guide-card">
+                        <div class="guide-icon">
+                            <i class="fas fa-futbol"></i>
+                        </div>
+                        <h4>Soi kèo hôm nay?</h4>
+                        <p>Phân tích kèo bóng đá chính xác, tỷ lệ thắng cao từ chuyên gia</p>
+                        <button class="btn btn-sm btn-outline-warning" onclick="openChat('Soi kèo hôm nay?')">
+                            Hỏi ngay
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Chat Window -->
-  <div id="chat-window" style="display:none;">
-    <div id="chat-header">
-      <span>Kèo Sư MelBet</span>
-      <button onclick="closeChatWindow()">×</button>
+    <!-- Footer -->
+    <footer class="footer-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">
+                        <img src="{{ url_for('static', filename='images/melbet-logo.png') }}" alt="MelBet Logo" class="footer-logo mb-3">
+                        <p>Kèo Sư MelBet - Đối tác uy tín hàng đầu trong lĩnh vực cược thể thao và casino online.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="footer-title">Thông tin liên hệ</h5>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone text-warning me-2"></i>
+                            <span>+357 95553979</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope text-warning me-2"></i>
+                            <span>melbet.globalaffiliates@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-globe text-warning me-2"></i>
+                            <a href="https://melbetglobalaffiliates.dcms.site/" target="_blank">melbetglobalaffiliates.dcms.site</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="footer-title">Kết nối với chúng tôi</h5>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/globalmelbet/" target="_blank" class="social-link">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/melbet_globalaffiliates.6879/" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://x.com/Melbetmanager68" target="_blank" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                    <p class="mt-3">
+                        <strong>Mã đối tác:</strong> ml_1498999<br>
+                        <strong>Link affiliate:</strong> <a href="https://melbetglobalaffiliates.dcms.site/" target="_blank">melbetglobalaffiliates.dcms.site</a>
+                    </p>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2024 MelBet Global Affiliates. Mọi quyền được bảo lưu.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Manual Chatbot Widget -->
+    <div id="manual-chatbot" style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 999999;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #1C64F2, #0052CC);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(28, 100, 242, 0.4);
+        transition: all 0.3s ease;
+    " onclick="openChatWindow()">
+        <i class="fas fa-comments" style="color: white; font-size: 24px;"></i>
     </div>
-    <iframe src="https://udify.app/chatbot/xhJuB06Ye6hfb35s" width="100%" height="100%" frameborder="0"></iframe>
-  </div>
+    
+    <!-- Chat Window -->
+    <div id="chat-window" style="
+        display: none;
+        position: fixed;
+        bottom: 90px;
+        right: 20px;
+        width: 350px;
+        height: 500px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        border: 2px solid rgba(255, 215, 0, 0.3);
+        z-index: 999998;
+        overflow: hidden;
+    ">
+        <div style="
+            background: linear-gradient(135deg, #1C64F2, #0052CC);
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        ">
+            <h4 style="margin: 0; font-size: 16px;">Kèo Sư MelBet</h4>
+            <button onclick="closeChatWindow()" style="
+                background: none;
+                border: none;
+                color: white;
+                font-size: 20px;
+                cursor: pointer;
+            ">&times;</button>
+        </div>
+        <iframe 
+            src="https://udify.app/chatbot/xhJuB06Ye6hfb3s5"
+            style="
+                width: 100%;
+                height: calc(100% - 60px);
+                border: none;
+            "
+        ></iframe>
+    </div>
 
-  <!-- Footer -->
-  <footer>
-    <img src="{{ url_for('static', filename='images/melbet-logo.png') }}" alt="MelBet Logo">
-    <p>Đối tác uy tín hàng đầu trong lĩnh vực cược thể thao và casino online</p>
-    <p>📞 +357 95553979 | 📧 melbet.globalaffiliates@gmail.com</p>
-    <p>🌐 <a href="https://melbetglobalaffiliates.dcms.site" target="_blank">melbetglobalaffiliates.dcms.site</a></p>
-    <p>© 2024 MelBet Global Affiliates. Mọi quyền được bảo lưu.</p>
-  </footer>
-
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Dify Chatbot Integration -->
+    <script>
+        window.difyChatbotConfig = {
+            token: 'xhJuB06Ye6hfb3s5'
+        }
+    </script>
+    <script 
+        src="https://udify.app/embed.min.js" 
+        id="xhJuB06Ye6hfb3s5"
+        defer>
+    </script>
+    
+    <style>
+        #dify-chatbot-bubble-button {
+            background-color: #1C64F2 !important;
+        }
+        #dify-chatbot-bubble-window {
+            width: 24rem !important;
+            height: 40rem !important;
+        }
+        
+        @media (max-width: 768px) {
+            #chat-window {
+                width: 90vw !important;
+                height: 70vh !important;
+                right: 5vw !important;
+                bottom: 80px !important;
+            }
+            #manual-chatbot {
+                bottom: 15px !important;
+                right: 15px !important;
+            }
+        }
+    </style>
+    
+    <script>
+        function openChatWindow() {
+            document.getElementById('chat-window').style.display = 'block';
+            document.getElementById('manual-chatbot').style.opacity = '0.7';
+        }
+        
+        function closeChatWindow() {
+            document.getElementById('chat-window').style.display = 'none';
+            document.getElementById('manual-chatbot').style.opacity = '1';
+        }
+        
+        // Close chat when clicking outside
+        document.addEventListener('click', function(e) {
+            const chatWindow = document.getElementById('chat-window');
+            const chatButton = document.getElementById('manual-chatbot');
+            if (!chatWindow.contains(e.target) && !chatButton.contains(e.target)) {
+                if (chatWindow.style.display === 'block') {
+                    closeChatWindow();
+                }
+            }
+        });
+    </script>
+    
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>
