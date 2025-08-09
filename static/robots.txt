@@ -2,5 +2,5 @@
 <loc>https://keo-su-mel-bet.onrender.com/faq/</loc>
 <loc>https://keo-su-mel-bet.onrender.com/contact/</loc>
 <loc>https://keo-su-mel-bet.onrender.com/search/</loc>
-<loc>https://keo-su-mel-bet.onrender.com/article/mu-chelsea</loc>
+<loc>https://keo-su-mel-bet.onrender.com/article/mu-chelsea/</loc>
 
