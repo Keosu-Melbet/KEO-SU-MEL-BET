@@ -51,26 +51,27 @@ def favicon():
         mimetype='image/vnd.microsoft.icon'
     )
 
-# Route robots.txt
+# Route robots.txt (tự động lấy domain)
 @app.route('/robots.txt')
 def robots():
-    return (
+    domain = request.host_url.rstrip('/')
+    content = (
         "User-agent: *\n"
         "Disallow:\n"
-        "Sitemap: https://yourdomain.com/sitemap.xml\n",
-        200,
-        {'Content-Type': 'text/plain'}
+        f"Sitemap: {domain}/sitemap.xml\n"
     )
+    return content, 200, {'Content-Type': 'text/plain'}
 
-# Route sitemap.xml
+# Route sitemap.xml (tự động lấy domain)
 @app.route('/sitemap.xml')
 def sitemap():
+    domain = request.host_url.rstrip('/')
     pages = [
-        {"loc": "https://yourdomain.com/", "lastmod": "2025-08-08"},
-        {"loc": "https://yourdomain.com/faq", "lastmod": "2025-08-08"},
-        {"loc": "https://yourdomain.com/contact", "lastmod": "2025-08-08"},
-        {"loc": "https://yourdomain.com/search", "lastmod": "2025-08-08"},
-        {"loc": "https://yourdomain.com/article/mu-chelsea", "lastmod": "2025-08-08"}
+        {"loc": f"{domain}/", "lastmod": "2025-08-08"},
+        {"loc": f"{domain}/faq", "lastmod": "2025-08-08"},
+        {"loc": f"{domain}/contact", "lastmod": "2025-08-08"},
+        {"loc": f"{domain}/search", "lastmod": "2025-08-08"},
+        {"loc": f"{domain}/article/mu-chelsea", "lastmod": "2025-08-08"}
     ]
     xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
     xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
