@@ -1,6 +1,6 @@
-<loc>https://keo-su-mel-bet.onrender.com/</loc>
-<loc>https://keo-su-mel-bet.onrender.com/faq/</loc>
-<loc>https://keo-su-mel-bet.onrender.com/contact/</loc>
-<loc>https://keo-su-mel-bet.onrender.com/search/</loc>
-<loc>https://keo-su-mel-bet.onrender.com/article/mu-chelsea/</loc>
+User-agent: *
+Allow: /
+Sitemap: https://keo-su-mel-bet.onrender.com/sitemap.xml
+
+
 
