@@ -1,7 +1,7 @@
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static", template_folder="templates")
 app.secret_key = os.environ.get("SESSION_SECRET", "melbet-default-secret")
 
 # Trang chủ
@@ -23,7 +23,6 @@ def contact():
 @app.route('/search')
 def search():
     query = request.args.get("q")
-    # Dữ liệu mẫu — sau này có thể thay bằng truy vấn DB
     results = [
         {"title": "Kèo hôm nay", "slug": "keo-hom-nay"},
         {"title": "Phân tích trận MU vs Chelsea", "slug": "mu-chelsea"}
@@ -33,7 +32,6 @@ def search():
 # Trang bài viết động
 @app.route('/article/<slug>')
 def article(slug):
-    # Dữ liệu mẫu — sau này có thể lấy từ DB theo slug
     article = {
         "title": "Phân tích trận MU vs Chelsea",
         "description": "Dự đoán tỷ số và kèo cược trận đấu hấp dẫn.",
@@ -43,6 +41,15 @@ def article(slug):
         "content": "<p>MU đang có phong độ cao, nhưng Chelsea lại có lợi thế sân nhà...</p>"
     }
     return render_template("article.html", article=article)
+
+# Route favicon
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(
+        os.path.join(app.root_path, 'static', 'images'),
+        'favicon.ico',
+        mimetype='image/vnd.microsoft.icon'
+    )
 
 # Route robots.txt
 @app.route('/robots.txt')
@@ -82,4 +89,4 @@ def page_not_found(e):
 
 # Khởi chạy ứng dụng
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run()
