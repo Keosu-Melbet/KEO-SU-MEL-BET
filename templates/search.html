@@ -1,19 +1,44 @@
 {% extends "base.html" %}
 
-{% block title %}Tìm kiếm - Kèo Sư Melbet{% endblock %}
-{% block description %}Kết quả tìm kiếm các bài viết, phân tích kèo và dự đoán bóng đá từ Kèo Sư Melbet.{% endblock %}
-{% block og_title %}Tìm kiếm - Kèo Sư Melbet{% endblock %}
-{% block og_description %}Xem kết quả tìm kiếm từ kho dữ liệu soi kèo chính xác nhất.{% endblock %}
+{% block title %}Kết quả cho "{{ query }}" - Kèo Sư Melbet{% endblock %}
+{% block description %}Tìm kiếm kết quả cho từ khóa "{{ query }}" từ kho dữ liệu soi kèo bóng đá chính xác nhất của Kèo Sư Melbet.{% endblock %}
+{% block og_title %}Tìm kiếm "{{ query }}" - Kèo Sư Melbet{% endblock %}
+{% block og_description %}Xem kết quả cho "{{ query }}" từ kho bài viết phân tích kèo bóng đá chuyên sâu.{% endblock %}
+{% block canonical %}{{ request.url }}{% endblock %}
 
 {% block content %}
 <section>
-  <h2>Kết quả tìm kiếm</h2>
+  <h2>Kết quả tìm kiếm cho "{{ query }}"</h2>
+
   {% if results %}
     <ul>
       {% for item in results %}
-        <li><a href="{{ url_for('article', slug=item.slug) }}">{{ item.title }}</a></li>
+        <li>
+          <a href="{{ url_for('article', slug=item.slug) }}">{{ item.title }}</a>
+          {% if item.description %}
+            <p>{{ item.description }}</p>
+          {% endif %}
+        </li>
       {% endfor %}
     </ul>
+
+    <!-- Structured Data: ItemList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {% for item in results %}
+        {
+          "@type": "ListItem",
+          "position": {{ loop.index }},
+          "url": "{{ url_for('article', slug=item.slug, _external=True) }}"
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    }
+    </script>
+
   {% else %}
     <p>Không tìm thấy kết quả phù hợp.</p>
   {% endif %}
