@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#ffc107">
   <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="xecqQ7S4ogO1aZDGlYiYAlHf3QiaGtY75fpxl-AdZTY" />
-  <link rel="canonical" href="{{ request.url }}">
+  <link rel="canonical" href="{% block canonical %}{{ request.url }}{% endblock %}">
 
   <!-- SEO Meta -->
   <title>{% block title %}Melbet Việt Nam{% endblock %}</title>
@@ -31,7 +31,7 @@
     "logo": "{{ url_for('static', filename='images/favicon.io/android-chrome-192x192.png') }}",
     "sameAs": [
       "https://www.facebook.com/globalmelbet",
-      "https://www.instagram.com/melbet_globalaffiliates.6879/"
+      "https://www.instagram.com/melbet_globalaffiliates.6879/",
       "https://x.com/Melbetmanager68"
     ]
   }
@@ -55,14 +55,12 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-MDXPT3DS');
   </script>
-  <!-- End Google Tag Manager -->
 </head>
 
 <body>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDXPT3DS"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
   <header>
     <h1>Melbet Việt Nam</h1>
@@ -76,7 +74,6 @@
 
   <main>
     {% block content %}
-    <!-- Nội dung từng trang sẽ hiển thị ở đây -->
     {% endblock %}
   </main>
 
