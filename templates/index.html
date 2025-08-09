@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>MelBet Global Affiliates - Đối tác cá cược uy tín</title>
+  <meta name="description" content="Trở thành đối tác MelBet và kiếm tiền từ cá cược thể thao. Chatbot hỗ trợ 24/7.">
+  <meta name="keywords" content="MelBet, cá cược, affiliate, soi kèo, đối tác, chatbot, casino online">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="MelBet Global Affiliates">
+  <meta property="og:description" content="Trở thành đối tác MelBet và kiếm tiền từ cá cược thể thao.">
+  <meta property="og:image" content="{{ url_for('static', filename='images/melbet-logo.png') }}">
+  <meta property="og:url" content="https://melbetglobalaffiliates.dcms.site">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MelBet Global Affiliates",
+    "url": "https://melbetglobalaffiliates.dcms.site",
+    "logo": "https://melbetglobalaffiliates.dcms.site/static/images/melbet-logo.png",
+    "sameAs": [
+      "https://www.facebook.com/globalmelbet/",
+      "https://www.instagram.com/melbetglobalaffiliates.6879/"
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- Chat Guide Section -->
+  <section class="chat-guide">
+    <h2>📌 Hướng dẫn nhanh</h2>
+    <button onclick="openChat('Cách làm đối tác MelBet?')">🤝 Làm đối tác MelBet</button>
+    <button onclick="openChat('Soi kèo bóng đá hôm nay?')">⚽ Soi kèo hôm nay</button>
+    <button onclick="openChat('Khuyến mãi MelBet mới nhất?')">🎁 Khuyến mãi mới</button>
+    <button onclick="openChat('Hướng dẫn nạp tiền MelBet?')">💳 Nạp tiền MelBet</button>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="contact-form">
+    <h2>📬 Liên hệ với chúng tôi</h2>
+    <form action="/submit" method="POST">
+      <input type="text" name="name" placeholder="Tên của bạn" required>
+      <input type="email" name="email" placeholder="Email liên hệ" required>
+      <textarea name="message" placeholder="Nội dung cần hỗ trợ" required></textarea>
+      <button type="submit">Gửi yêu cầu</button>
+    </form>
+  </section>
+
+  <!-- Chat Button -->
+  <button id="chat-button" onclick="openChatWindow()">💬</button>
+
+  <!-- Chat Window -->
+  <div id="chat-window" style="display:none;">
+    <div id="chat-header">
+      <span>Kèo Sư MelBet</span>
+      <button onclick="closeChatWindow()">×</button>
+    </div>
+    <iframe src="https://udify.app/chatbot/xhJuB06Ye6hfb35s" width="100%" height="100%" frameborder="0"></iframe>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <img src="{{ url_for('static', filename='images/melbet-logo.png') }}" alt="MelBet Logo">
+    <p>Đối tác uy tín hàng đầu trong lĩnh vực cược thể thao và casino online</p>
+    <p>📞 +357 95553979 | 📧 melbet.globalaffiliates@gmail.com</p>
+    <p>🌐 <a href="https://melbetglobalaffiliates.dcms.site" target="_blank">melbetglobalaffiliates.dcms.site</a></p>
+    <p>© 2024 MelBet Global Affiliates. Mọi quyền được bảo lưu.</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

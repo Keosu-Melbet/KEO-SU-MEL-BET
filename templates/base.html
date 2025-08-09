@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffc107">
+  <meta name="robots" content="index, follow">
+  <meta name="google-site-verification" content="xecqQ7S4ogO1aZDGlYiYAlHf3QiaGtY75fpxl-AdZTY" />
+  <link rel="canonical" href="{{ request.url }}">
+
+  <!-- SEO Meta -->
+  <title>{% block title %}Melbet Việt Nam{% endblock %}</title>
+  <meta name="description" content="{% block description %}Trang cá cược thể thao uy tín, cập nhật kèo bóng đá mỗi ngày.{% endblock %}">
+  <meta name="keywords" content="cá cược, bóng đá, kèo nhà cái, melbet, soi kèo, tỷ lệ cược">
+  <meta name="author" content="Melbet Việt Nam">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{% block og_title %}Melbet Việt Nam{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}Trang cá cược thể thao uy tín, cập nhật kèo bóng đá mỗi ngày.{% endblock %}">
+  <meta property="og:image" content="{{ url_for('static', filename='images/og-image.jpg') }}">
+  <meta property="og:url" content="{{ request.url }}">
+  <meta property="og:type" content="website">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Melbet Việt Nam",
+    "url": "{{ request.url_root }}",
+    "logo": "{{ url_for('static', filename='images/favicon.io/android-chrome-192x192.png') }}",
+    "sameAs": [
+      "https://www.facebook.com/globalmelbet",
+      "https://www.instagram.com/melbet_globalaffiliates.6879/"
+      "https://x.com/Melbetmanager68"
+    ]
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/favicon.io/apple-touch-icon.png') }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon.io/favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon.io/favicon-16x16.png') }}">
+  <link rel="manifest" href="{{ url_for('static', filename='images/favicon.io/site.webmanifest') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.io/favicon.ico') }}">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <!-- Google Tag Manager -->
+  <script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MDXPT3DS');
+  </script>
+  <!-- End Google Tag Manager -->
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDXPT3DS"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <h1>Melbet Việt Nam</h1>
+    <nav>
+      <a href="{{ url_for('index') }}">Trang chủ</a>
+      <a href="{{ url_for('faq') }}">FAQ</a>
+      <a href="{{ url_for('contact') }}">Liên hệ</a>
+      <a href="{{ url_for('search') }}">Tìm kiếm</a>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}
+    <!-- Nội dung từng trang sẽ hiển thị ở đây -->
+    {% endblock %}
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Melbet Việt Nam. All rights reserved.</p>
+  </footer>
+</body>
+</html>
