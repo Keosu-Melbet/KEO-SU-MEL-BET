@@ -4,15 +4,18 @@
 {% block description %}{{ article.description }}{% endblock %}
 {% block og_title %}{{ article.title }}{% endblock %}
 {% block og_description %}{{ article.description }}{% endblock %}
+{% block canonical %}{{ request.url }}{% endblock %}
 
 {% block extra_head %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "NewsArticle",
   "headline": "{{ article.title }}",
   "description": "{{ article.description }}",
-  "image": "https://keo-su-mel-bet.onrender.com/static/{{ article.image }}",
+  "image": [
+    "{{ url_for('static', filename=article.image, _external=True) }}"
+  ],
   "author": {
     "@type": "Person",
     "name": "Afiliate"
@@ -22,7 +25,7 @@
     "name": "Kèo Sư Melbet",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://keo-su-mel-bet.onrender.com/static/og-image.jpg"
+      "url": "{{ url_for('static', filename='images/og-image.jpg', _external=True) }}"
     }
   },
   "datePublished": "{{ article.date_published }}",
